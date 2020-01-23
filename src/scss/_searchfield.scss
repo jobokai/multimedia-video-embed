@@ -1,0 +1,110 @@
+// Search field Styles
+$darkBlack: #313131;
+$lightBlack: #787878;
+.c-search-field {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  margin-bottom: 25px;
+  flex: 0 0 100%;
+  transition: all 150ms ease;
+  box-shadow: 2px 2px 3px -2px rgba(0, 0, 0, .2);
+}
+
+.c-search-field--focused {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px;
+}
+
+.c-search-field__icon-button {
+  float: left;
+  padding: 0 !important;
+  height: 48px !important;
+  width: 54px !important;
+}
+
+.c-search-field--focused .c-search-field__icon-button:hover .c-search-field__icon-button__icon {
+  fill: $darkBlack !important;
+}
+
+.c-search-field__icon-button__icon {
+  fill: $lightBlack !important;
+  margin: 12px 16px;
+}
+
+// Tooltip
+.c-search-field__icon-button > div > div {
+  left: 4px !important;
+}
+
+// Tooltip background
+.c-search-field__icon-button > div > div > div {
+  background-color: $darkBlack !important;
+}
+
+.c-search-field__text-field-wrapper {
+  white-space: nowrap;
+}
+
+.c-search-field__text-field > div,
+.c-search-field__text-field > input {
+  padding-left: 16px !important;
+}
+.c-search-field__text-field-wrapper__search-icon{
+  position:absolute;
+  top:13px;
+  left:9px;
+  color:#666;
+}
+
+.c-search-field__text-field-wrapper {
+  padding: 0;
+  position: relative;
+  margin-left: '40px';
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.87);
+  cursor: inherit;
+  opacity: 1;
+  height: 100%
+}
+
+.c-search-field__text-field {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  position: relative;
+  margin-left: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0.87);
+  opacity: 1;
+  height: 100%;
+}
+
+.c-search-field__text-field-wrapper__search-label {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  opacity: 1;
+  left: 40px;
+  color: rgba(0, 0, 0, 0.3);
+  transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  bottom: 12px;
+}
+
+.c-search-field__text-field-wrappper__background {
+  font-size: 16px;
+  line-height: 24px;
+  width: 100%;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  font-family: 'Roboto, sans-serif';
+  transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  cursor: auto;
+}

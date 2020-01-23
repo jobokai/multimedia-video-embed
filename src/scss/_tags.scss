@@ -1,0 +1,123 @@
+.stl-video__details__tags {
+  margin-top: 10px;
+  margin-bottom: 25px;
+
+  &::before {
+    content: "Corresponding Pillars:";
+    display: block;
+    width: 100%;
+    margin-left: 1px;
+    font-weight: bold;
+    font-size: .9em;
+    color: #757575;
+  }
+}
+
+.stl-video__details__tags--tag {
+  display: inline-block;
+  margin-right: 8px;
+  margin-bottom: 15px;
+  font-size: .9rem;
+  font-style: italic;
+  color: #757575;
+  letter-spacing: .03rem;
+
+  &::after {
+    content: ", ";
+    margin-left: 1px;
+    font-weight: bold;
+    font-size: .9em;
+    color: #757575;
+  }
+
+  &:last-of-type::after {
+    content: "";
+  }
+}
+
+.stl-video__filters {
+  width: 100%;
+  margin-bottom: 15px;
+
+  h3 {
+    margin: 0;
+    margin-bottom: 15px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    font-family: "Champion Welterweight","Archivo Black","Arial Black","Arial Bold","Gadget",sans-serif;
+    color: #98700d;
+    font-size: 1.3em;
+    font-weight: 400;
+    letter-spacing: 2px;
+  }
+}
+
+.stl-video__filters--container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.stl-video__filters--tag {
+  background: transparent;
+  border: 0;
+  margin-right: 12px;
+  margin-bottom: 15px;
+  font-size: .95rem;
+  font-style: italic;
+  font-weight:bold;
+  color: #757575;
+  letter-spacing: .04rem;
+  padding: 4px 15px;
+  background-color: #efefef;
+  border: 1px solid #cacaca;
+  border-radius: 30px;
+  transition: all 150ms ease;
+  // font-weight: 500;
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 4px 2px #6E99B4;
+  }
+
+  &:nth-of-type(1).active {
+    background-color: #5B6870;
+    color: #fff;
+  }
+
+  &:nth-of-type(2).active {
+    background-color: #6B4536;
+    color: #fff;
+  }
+
+  &:nth-of-type(3).active {
+    background-color: #FFD100;
+    color: #000;
+  }
+
+  &:nth-of-type(4).active {
+    background-color: #29A592;
+    color: #000;
+  }
+
+  &:nth-of-type(5).active {
+    background-color: #B46012;
+    color: #fff;
+  }
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.active {
+    transition: all 150ms ease;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: scale(1.07);
+    border-color: #fff;
+    color: #353535;
+    background-color: #ccc;
+  }
+}

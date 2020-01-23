@@ -1,0 +1,109 @@
+.stl-video {
+  flex: 1 0 auto;
+  max-width: calc(50% - 25px);
+
+  &:nth-child(odd) {
+    margin-right: 25px;
+  }
+
+  &:nth-child(even) {
+    margin-left: 25px;
+  }
+
+  @media (max-width: 767px) {
+    max-width: 100%;
+
+    &:nth-child(odd) {
+      margin-right: 0;
+    }
+
+    &:nth-child(even) {
+      margin-left: 0;
+    }
+  }
+}
+
+.stl-video__embed {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.stl-video__embed--kaltura {
+  height: 270px; // set a default height for the delayed loading to work correctly
+  background: rgba(0,0,0,1);
+  width: 480px;
+  position: relative;
+  .loading {
+    left: 43%;
+    position: absolute;
+    top: 40%;
+    > div > div {
+      border-color: #fff!important;
+    }
+  }
+}
+
+.stl-video__embed--youtube {
+  height: 270px; // set a default height for the delayed loading to work correctly
+  background: rgba(0,0,0,1);
+  width: 480px;
+  position: relative;
+
+  .loading {
+    left: 43%;
+    position: absolute;
+    top: 40%;
+    > div > div {
+      border-color: #fff!important;
+    }
+  }
+
+  .largePlayBtnBorder.largePlayBtn {
+    height: 25px;
+    width: 25px;
+    border-radius: 50% !important;
+  }
+  
+  .watched {
+    background-color: #bada55 !important;
+  }
+}
+
+.stl-video__embed--vimeo {
+  height: 270px; // set a default height for the delayed loading to work correctly
+  background: rgba(0,0,0,1);
+  width: 480px;
+  position: relative;
+  
+  .loading {
+    left: 43%;
+    position: absolute;
+    top: 40%;
+    > div > div {
+      border-color: #fff!important;
+    }
+  }
+}
+
+.stl-video__details--title {
+  margin: 0;
+  padding-top: 10px;
+  line-height: 1.8;
+  text-transform: uppercase;
+  margin-top: 0;
+  font-family: "Champion Welterweight","Archivo Black","Arial Black","Arial Bold","Gadget",sans-serif;
+  color: #98700d;
+  font-size: 1.8em;
+  font-weight: 400;
+}

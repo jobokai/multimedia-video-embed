@@ -1,0 +1,744 @@
+$fontFamily: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+@import "./add-to-calendar";
+@import "~react-drawer/lib/react-drawer.css";
+
+.itc-event-system-no-scroll {
+  position: absolute;
+  overflow: hidden;
+}
+
+.itc-event-system {
+  font-family: $fontFamily;
+  font-size: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0 10px;
+  width: 100%;
+}
+
+.itc-event-system__fab {
+  position: fixed;
+  border: 0;
+  background: $color-campusGold;
+  color: #fff;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1em;
+  text-transform: uppercase;
+  right: 0;
+  bottom: 0;
+  z-index: 997;
+  transition: background-color .3s;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.12), 0 1px 5px 0 rgba(0,0,0,.2);
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: darken($color-campusGold, 10%);
+  }
+}
+
+.itc-event-system__fab--icon {
+  font-size: 2em;
+  margin-top: 5px;
+}
+
+.react-drawer-drawer {
+  background-color: #fff!important;
+  width: 100%!important;
+  box-shadow: none!important;
+  z-index: 9999;
+  overflow-x: scroll;
+}
+
+.react-drawer-overlay {
+  z-index: 300;
+}
+
+.itc-event-system__drawer-header {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-color: rgba(0,0,0,.7);
+  border-bottom: 3px solid $color-campusGold;
+  margin-bottom: 12px;
+
+  h2 {
+    padding: 10px;
+    margin: 0;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  .itc-event-system__drawer-close {
+    color: #fff;
+    border: 0;
+    background: transparent;
+    font-size: 1.5em;
+  }
+  
+  .itc-event-system__drawer-close .itc-event-system__drawer-close--icon {
+    font-size: 1.2em;
+  }
+}
+
+.itc-event-system__drawer-header .itc-event-system__drawer-close {
+  padding-right: 10px;
+}
+
+.itc-event-system__drawer-header .itc-event-system__drawer-close .itc-event-system__drawer-close--icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+}
+
+.itc-event-system__drawer-header .itc-event-system__drawer-close .itc-event-system__drawer-close--text {
+  display: block;
+}
+
+.itc-event-system__interaction {
+  flex: 1 1 25%;
+  font-size: 10px;
+}
+
+.itc-event-system__calendar {
+  margin: 0 auto;
+  padding-top: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  transition-property: top;
+  transition-duration: 150ms;
+  transition-timing-function: linear;
+  transition-delay: 0;
+
+  .itc-event-system__calendar--wrapper {
+    padding: 0 15px 15px 15px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+  }
+
+  .itc-event-system__calendar--wrapper .rbc-calendar {
+    flex: 1 1 50%;
+    min-height: 290px;
+    font-family: $fontFamily;
+
+    @media(max-width: 767px) {
+      flex: 1 1 100%;
+      padding: 0 15px;
+    }
+  }
+
+  .itc-event-system__calendar--wrapper .rbc-row-bg {
+    overflow: visible;
+  }
+
+  .itc-event-system__calendar--wrapper .rbc-month-view {
+    border: 0;
+  }
+
+  .itc-event-system__calendar--wrapper .rbc-month-view .rbc-month-row .rbc-row-bg .rbc-day-bg {
+    border: 0;
+    height: 100%;
+  }
+
+  .itc-event-system__calendar--wrapper .rbc-month-view .rbc-month-row .rbc-row-bg .rbc-off-range-bg {
+    background: transparent;
+  }
+
+  .itc-event-system__calendar--wrapper .rbc-month-view .rbc-month-row .rbc-row-bg .rbc-today {
+    background: transparent;
+  }
+
+  .itc-event-system__calendar--wrapper .rbc-month-view .rbc-month-row .rbc-row-content {
+    display: none;
+  }
+
+  .itc-event-system__calendar--wrapper .rbc-month-view .rbc-month-header {
+    padding-top: 0;
+  }
+
+  // TODO: Change text color to have sufficient color contrast ratio against white background
+  // TODO: (cont) per WCAG 2.0 AA
+  .itc-event-system__calendar--wrapper .rbc-month-view .rbc-month-header .rbc-header {
+    padding: 15px 0;
+    max-width: 14.249%;
+    border: 0;
+    color: $color-gray40;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    height: 50px;
+  }
+
+  .itc-event-system__calendar--wrapper .rbc-month-view .rbc-month-row {
+    flex-basis: 30px;
+    max-height: 35px;
+  }
+
+  .itc-event-system__calendar--wrapper .rbc-month-view .rbc-month-row {
+    border-bottom: 2px solid $color-gray15 !important;
+    border-top: 0 !important;
+    border-left: 1px solid $color-gray15 !important;
+    border-right: 2px solid $color-gray15 !important;
+
+    &:nth-of-type(2) {
+      border-top: 2px solid $color-gray15 !important;
+    }
+  }
+
+  .itc-event-system__calendar--wrapper .rbc-day-bg {
+    width: 100%;
+  }
+
+  .itc-event-system__calendar--wrapper .rbc-day-bg .rbc-date-cell {
+    text-align: center !important;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0 auto;
+    border: 0;
+    outline: 0;
+    line-height: 40px;
+
+    // &:active,
+    // &:focus {}
+  }
+}
+
+.itc-event-system__month--day {
+  position: relative;
+  border: 1px solid $color-gray15;
+  border-top: 0;
+  border-bottom: 0;
+  color: #000;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.1em;
+
+  &:nth-of-type(7) {
+    margin-right: -1px;
+    flex-basis: 14.3857% !important;
+    max-width: 14.3857% !important;
+    border-right: 0;
+  }
+}
+
+.itc-event-system__month--day.isSelected .rbc-day-bg .rbc-date-cell {
+  border: 0;
+}
+
+.itc-event-system__month--day.isSelected .rbc-day-bg {
+  border: 3px solid $color-gray40 !important;
+  box-sizing: border-box;
+}
+
+.itc-event-system__month--day .rbc-today,
+.itc-event-system__month--day.isSelected .rbc-day-bg.rbc-today {
+  border: 0 !important;
+  border-bottom: 3px solid $color-fountainRunTeal !important;
+}
+
+.itc-event-system__month--day.isSelected .rbc-day-bg.rbc-today {
+  border: 3px solid $color-fountainRunTeal !important;
+}
+
+.itc-event-system__month--day .rbc-off-range-bg {
+  background: lighten($color-gray15, 9) !important;
+  color: $color-gray70 !important;
+}
+
+.itc-event-system__off-range, .itc-event-system__off-range .rbc-off-range-bg{
+  background: lighten($color-gray70,0) !important;
+  button {
+    color: $color-gray15 !important;
+  }
+}
+
+////////////////////////
+// Date Changer
+///////////////////////
+
+.itc-event-system__toolbar--container {
+  height: 75px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+  background: repeating-linear-gradient(135deg, transparent, rgba(255, 255, 255, .2) 1px, transparent 2px, transparent 15px) lighten($color-gray90, 10);
+  padding-bottom: 0;
+  display: flex;
+  width: 90%;
+  margin: -45px auto 0;
+}
+
+.itc-event-system__toolbar--container .itc-event-system__toolbar--date {
+  flex: 0 0 200px;
+  color: #fff;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.itc-event-system__toolbar--container .itc-event-system__toolbar--date .itc-event-system__date--month {
+  font-size: 2.8em;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.itc-event-system__toolbar--container .itc-event-system__toolbar--date .itc-event-system__date--year {
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1;
+}
+
+
+.itc-event-system__toolbar--container .itc-event-system__toolbar--next {
+  text-align: left;
+}
+
+.itc-event-system__toolbar--container .itc-event-system__toolbar--prev {
+  text-align: right;
+}
+
+.itc-event-system__toolbar--container .itc-event-system__toolbar--next,
+.itc-event-system__toolbar--container .itc-event-system__toolbar--prev {
+  cursor: pointer;
+  flex: 1 1 auto;
+  background: transparent;
+  color: #fff;
+  font-size: 3em;
+  border: 0;
+  font-weight: 100;
+  line-height: 100%;
+
+  &:active,
+  &:focus {
+    outline: 1px dotted #263238;
+  }
+
+}
+
+
+
+// ***************************************
+// Event Badges
+// ***************************************
+
+.itc-event-system__event-badges {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  position: absolute;
+  top: 15%;
+  justify-content: center;
+}
+
+.itc-event-system__badge {
+  width: 5px;
+  height: 5px;
+  margin: 0 2px;
+  border-radius: 50%;
+}
+
+// ***************************************
+// Event List styles
+// ***************************************
+
+.itc-event-system__list {
+  flex: 1 1 55%;
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: 14px;
+}
+
+.itc-event-system__list .itc-event-system__list-group {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  border-bottom: 1px solid #eee;
+}
+
+.itc-event-system__list .itc-event-system__list-group .itc-u-flex-item {
+  flex: 1 1 auto;
+}
+
+.itc-event-system__list .itc-event-system__list-group .itc-event-system__date {
+  background: repeating-linear-gradient(135deg, transparent, rgba(255, 255, 255, .2) 1px, transparent 2px, transparent 15px) lighten($color-gray90, 10);
+  flex: 0 0 100px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-left: 0;
+  border-right: 0;
+  
+  span {
+    display: block;
+  }
+  
+  span.itc-event-system__date--day {
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: bold;
+  }
+}
+
+.itc-event-system__list .itc-event-system__list-group .itc-event-system__events {
+  background: #fff;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.itc-event-system__list .itc-event-system__list-group .itc-event-system__list-item {
+  display: flex;
+  flex-flow: row nowrap;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-left: 0;
+  border-right: 0;
+}
+
+.itc-event-system__list .itc-event-system__list-group .itc-event-system__list-item .itc-event-system__list-item-type {
+  flex: 0 1 15px;
+}
+
+.itc-event-system__list .itc-event-system__list-group .itc-event-system__list-item .itc-event-system__list-item-content {
+  padding: 25px;
+  flex: 1 1 55%;
+
+  h3 {
+    font-size: 1.5em;
+    margin: 0 0 .7rem 0;
+    text-transform: uppercase;
+    color: #000;
+    font-family: $fontFamily;
+    font-weight: 600;
+  }
+}
+
+.itc-event-system__list .itc-event-system__list-group .itc-event-system__list-item .itc-event-system__list-item-details {
+  flex: 1 1 30%;
+  padding: 25px 0;
+
+  .itc-event-system__list-item-details--type,
+  .itc-event-system__list-item-details--location,
+  .itc-event-system__list-item-details--time,
+  .itc-event-system__list-item-details--action {
+    padding: 2px 0;
+
+    svg {
+      margin-right: 25px;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.itc-event-system__list .itc-event-system__list-group .itc-event-system__list-item .itc-event-system__list-item-details .itc-event-system__list-item-details--action {
+
+  button {
+    border: 0;
+    background: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      outline: 3px solid #000;
+    }
+  }
+}
+
+.react-add-to-calendar {
+  margin-top: 5px;
+  margin-left: -5px;
+}
+
+.react-add-to-calendar__button {
+  color: #000;
+  border: 0;
+  background: transparent;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 5px;
+
+  &:hover,
+  &:focus {
+    outline: 3px solid #000;
+  }
+
+  span svg {
+    margin-right: 22px;
+    font-size: 1.2rem;
+  }
+}
+
+.react-add-to-calendar__dropdown ul {
+  padding: 5px;
+  
+  li {
+    display: flex;
+    flex-flow: row nowrap;
+
+    > a:hover {
+      color: $color-headlineGold;
+      text-decoration: underline;
+    }
+  }
+}
+
+.ratc-dropdown--icon {
+  font-size: 1.2rem;
+  min-width: 20px;
+  flex: 1 1 1.2rem;
+  margin-right: 15px;
+}
+
+.ratc-dropdown--caret {
+  font-size: 1.2rem;
+  min-width: 20px;
+  flex: 1 1 1.2rem;
+  margin-left: 5px;
+  margin-right: 5px!important;
+}
+
+.itc-u-button {
+  background: transparent;
+  border: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.itc-u-display-inline {
+  display: inline;
+}
+
+.itc-u-button--flat.itc-u-color-accessible-blue {
+
+  &:hover,
+  &:focus {
+    outline: 3px solid #0066F5
+  }
+}
+
+.itc-event-system__filters {
+  width: 100%;
+  font-size: 12px;
+}
+
+.itc-event-system__filters--main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+  h3 {
+    margin-bottom: 0;
+  }
+}
+
+.itc-event-system__filters--header h3 {
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.itc-event-system__filters__actions {
+  flex: 1 1 50%;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  text-align: left;
+  
+  svg {
+    vertical-align: text-bottom;
+  }
+}
+
+.itc-event-system__filters__icon {
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+.itc-event-system__filters--footer {
+  text-align: center;
+  font-size: 1.3em;
+  padding: 0 0 25px 0;
+
+  // TODO: Change text color to have sufficient color contrast ratio against
+  // TODO: (cont) $color-campusGold background per WCAG 2.0 AA
+  a {
+    display: block;
+    text-transform: uppercase;
+    margin: 5px;
+    padding: 10px 15px;
+    border: 0;
+    width: 100%;
+    margin-top: 15px;
+    background: repeating-linear-gradient(135deg, transparent, rgba(255, 255, 255, .2) 1px, transparent 2px, transparent 15px) $color-campusGold;
+  }
+}
+
+
+
+/////////////////////////////////
+// No events
+////////////////////////////////
+.itc-event-system__no-events {
+  padding: 45px;
+  position: relative;
+}
+
+.itc-event-system__no-events--icon {
+  font-size: 12em;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  opacity: .6;
+
+  svg {
+    color: #ddd;
+  }
+}
+
+.itc-event-system__no-events--headline {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5em;
+  line-height: 1.2em;
+  padding: 45px 0;
+  text-align: center;
+}
+
+.itc-event-system__no-events--subline {
+  position: relative;
+  z-index: 2;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.itc-event-system__no-events--filters {
+  color: $color-campusGold;
+  font-size: 1.5em;
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  font-weight: bold;
+}
+
+.itc-event-system__display-past {
+  border: 2px solid transparent;
+  border-radius: 3px;
+  padding: 5px;
+  text-decoration: underline;
+
+  &:hover {
+    border: 2px solid $color-campusGold;
+  }
+
+  &:active {
+    border: 2px solid $color-fountainRunTeal;
+  }
+}
+
+// Responsive Styles
+@media(max-width:767px) {
+  .itc-event-system__toolbar--date {
+    flex-basis: 70%!important;
+
+    .itc-event-system__date--month {
+      font-size: 2.2em!important;
+    }
+
+    .itc-event-system__date--year {
+      font-size: 1.2em!important;
+    }
+  }
+
+  .itc-event-system__list .itc-event-system__list-group {
+    flex-flow: column wrap;
+  }
+  
+  .itc-event-system__list .itc-event-system__list-group .itc-event-system__list-item {
+    flex-flow: row wrap;
+  }
+
+  .itc-event-system__list .itc-event-system__list-group .itc-event-system__list-item .itc-event-system__list-item-details {
+    flex: 1 1 100%;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  
+  .react-add-to-calendar {
+    margin: 0;
+  }
+
+  .react-add-to-calendar__button {
+    padding: 0;
+  }
+
+  .itc-event-system__list .itc-event-system__list-group .itc-event-system__date {
+    padding: 10px;
+    flex: 0 0 35px;
+    
+    span {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      display: inline-block;
+      padding: 0 10px;
+    }
+    
+    span.itc-event-system__date--day {
+      font-size: 2rem;
+      line-height: 2rem;
+      font-weight: bold;
+      vertical-align: sub;
+    }
+  }
+
+  .itc-event-system__filters--main {
+    flex-flow: column wrap;
+
+    .itc-event-system__filters__actions {
+      flex-basis: 100%;
+    }
+  }
+
+  .itc-event-system__no-events {
+    padding: 25px 5px;
+  }
+
+  .itc-event-system__no-events--headline {
+    font-size: 1.5em;
+  }
+
+  .itc-event-system__no-events--subline {
+    font-size: .9em;
+  }
+
+  .itc-event-system__no-events--icon {
+    font-size: 8em;
+  }
+}
+
+@media (min-width: 767px) and (max-width:1290px) { 
+  .react-drawer-drawer {
+    width: 50%!important;
+  }
+}

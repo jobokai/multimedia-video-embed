@@ -1,0 +1,489 @@
+// Color Variables that are imported from ~purduetemplates2015/components/css/mixins/all
+// Including here just for reference in our code and quick access.
+$color-campusGold:#c28e0e;
+$color-headlineGold:#98700d;
+$color-coalGray:#4d4038;
+$color-moonDustGray:#baa892;
+$color-everTrueBlue:#5b6870;
+$color-slayterSkyBlue:#6e99b4;
+$color-ameliaSkyBlue:#a3d6d7;
+$color-landGrantGreen:#085c11;
+$color-rossAdeGreen:#849e2a;
+$color-celeryBogGreen:#c3be0b;
+$color-springFestGreen:#e9e45b;
+$color-oakenBucketBrown:#6b4536;
+$color-bellTowerBrick:#b46012;
+$color-mackeyOrange:#ff9b1a;
+$color-yellowWalk:#ffd100;
+$color-fountainRunTeal:#29a592;
+$color-pappysPurple:#ad1f65;
+$color-gray90:#2e2e2e;
+$color-gray70:#707070;
+$color-gray40:#aaaaaa;
+$color-gray15:#dedede;
+
+// Font Color
+.itc-u-color-accessible-blue {
+  color: #0066F5 !important;
+}
+
+.itc-u-color-campus-gold {
+  color: $color-campusGold !important;
+}
+
+.itc-u-color-headline-gold {
+  color: $color-headlineGold !important;
+}
+
+.itc-u-color-coal-gray {
+  color: $color-coalGray !important;
+}
+
+.itc-u-color-moon-dust-gray {
+  color: $color-moonDustGray !important;
+}
+
+.itc-u-color-ever-true-blue {
+  color: $color-everTrueBlue !important;
+}
+
+.itc-u-color-slayter-sky-blue {
+  color: $color-slayterSkyBlue !important;
+}
+
+.itc-u-color-amelia-sky-blue {
+  color: $color-ameliaSkyBlue !important;
+}
+
+.itc-u-color-land-grant-green {
+  color: $color-landGrantGreen !important;
+}
+
+.itc-u-color-ross-ade-green {
+  color: $color-rossAdeGreen !important;
+}
+
+.itc-u-color-celery-bog-green {
+  color: $color-celeryBogGreen !important;
+}
+
+.itc-u-color-spring-fest-green {
+  color: $color-springFestGreen !important;
+}
+
+.itc-u-color-oaken-bucket-brown {
+  color: $color-oakenBucketBrown !important;
+}
+
+.itc-u-color-bell-tower-brick {
+  color: $color-bellTowerBrick !important;
+}
+
+.itc-u-color-mackey-orange {
+  color: $color-mackeyOrange !important;
+}
+
+.itc-u-color-yellow-walk {
+  color: $color-yellowWalk !important;
+}
+
+.itc-u-color-fountain-run-teal {
+  color: $color-fountainRunTeal !important;
+}
+
+.itc-u-color-pappys-purple {
+  color: $color-pappysPurple !important;
+}
+
+.itc-u-color-gray-90 {
+  color: $color-gray90 !important;
+}
+
+.itc-u-color-gray-70 {
+  color: $color-gray70 !important;
+}
+
+.itc-u-color-gray-40 {
+  color: $color-gray40 !important;
+}
+
+.itc-u-color-gray-15 {
+  color: $color-gray15 !important;
+}
+
+// Background Color
+.itc-u-bg-accessible-blue {
+  background-color: #0066F5 !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate(#0066F5, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-campus-gold {
+  background-color: $color-campusGold !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-campusGold, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-headline-gold {
+  background-color: $color-headlineGold !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-headlineGold, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-coal-gray {
+  background-color: $color-coalGray !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-coalGray, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-moon-dust-gray {
+  background-color: $color-moonDustGray !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-moonDustGray, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-ever-true-blue {
+  background-color: $color-everTrueBlue !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-everTrueBlue, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-slayter-sky-blue {
+  background-color: $color-slayterSkyBlue !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-slayterSkyBlue, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-amelia-sky-blue {
+  background-color: $color-ameliaSkyBlue !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-ameliaSkyBlue, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-land-grant-green {
+  background-color: $color-landGrantGreen !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-landGrantGreen, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-ross-ade-green {
+  background-color: $color-rossAdeGreen !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-rossAdeGreen, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-celery-bog-green {
+  background-color: $color-celeryBogGreen !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-celeryBogGreen, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-spring-fest-green {
+  background-color: $color-springFestGreen !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-springFestGreen, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-oaken-bucket-brown {
+  background-color: $color-oakenBucketBrown !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-oakenBucketBrown, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-bell-tower-brick {
+  background-color: $color-bellTowerBrick !important;
+  
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-bellTowerBrick, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-mackey-orange {
+  background-color: $color-mackeyOrange !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-mackeyOrange, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-yellow-walk {
+  background-color: $color-yellowWalk !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-yellowWalk, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-fountain-run-teal {
+  background-color: $color-fountainRunTeal !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-fountainRunTeal, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-pappys-purple {
+  background-color: $color-pappysPurple !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-pappysPurple, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-gray-90 {
+  background-color: $color-gray90 !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-gray90, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-gray-70 {
+  background-color: $color-gray70 !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-gray70, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-gray-40 {
+  background-color: $color-gray40 !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-gray40, 50%) !important;
+    opacity: .7;
+  }
+}
+
+.itc-u-bg-gray-15 {
+  background-color: $color-gray15 !important;
+
+  &.itc-u-bg-desaturate {
+    background-color: desaturate($color-gray15, 50%) !important;
+    opacity: .7;
+  }
+}
+
+// Fill Color
+.itc-u-fill-accessible-blue {
+  fill: #0066F5 !important;
+}
+
+.itc-u-fill-campus-gold {
+  fill: $color-campusGold !important;
+}
+
+.itc-u-fill-headline-gold {
+  fill: $color-headlineGold !important;
+}
+
+.itc-u-fill-coal-gray {
+  fill: $color-coalGray !important;
+}
+
+.itc-u-fill-moon-dust-gray {
+  fill: $color-moonDustGray !important;
+}
+
+.itc-u-fill-ever-true-blue {
+  fill: $color-everTrueBlue !important;
+}
+
+.itc-u-fill-slayter-sky-blue {
+  fill: $color-slayterSkyBlue !important;
+}
+
+.itc-u-fill-amelia-sky-blue {
+  fill: $color-ameliaSkyBlue !important;
+}
+
+.itc-u-fill-land-grant-green {
+  fill: $color-landGrantGreen !important;
+}
+
+.itc-u-fill-ross-ade-green {
+  fill: $color-rossAdeGreen !important;
+}
+
+.itc-u-fill-celery-bog-green {
+  fill: $color-celeryBogGreen !important;
+}
+
+.itc-u-fill-spring-fest-green {
+  fill: $color-springFestGreen !important;
+}
+
+.itc-u-fill-oaken-bucket-brown {
+  fill: $color-oakenBucketBrown !important;
+}
+
+.itc-u-fill-bell-tower-brick {
+  fill: $color-bellTowerBrick !important;
+}
+
+.itc-u-fill-mackey-orange {
+  fill: $color-mackeyOrange !important;
+}
+
+.itc-u-fill-yellow-walk {
+  fill: $color-yellowWalk !important;
+}
+
+.itc-u-fill-fountain-run-teal {
+  fill: $color-fountainRunTeal !important;
+}
+
+.itc-u-fill-pappys-purple {
+  fill: $color-pappysPurple !important;
+}
+
+.itc-u-fill-gray-90 {
+  fill: $color-gray90 !important;
+}
+
+.itc-u-fill-gray-70 {
+  fill: $color-gray70 !important;
+}
+
+.itc-u-fill-gray-40 {
+  fill: $color-gray40 !important;
+}
+
+.itc-u-fill-gray-15 {
+  fill: $color-gray15 !important;
+}
+
+// Font Color
+.itc-u-border-accessible-blue {
+  border-color: #0066F5 !important;
+}
+
+.itc-u-border-campus-gold {
+  border-color: $color-campusGold !important;
+}
+
+.itc-u-border-headline-gold {
+  border-color: $color-headlineGold !important;
+}
+
+.itc-u-border-coal-gray {
+  border-color: $color-coalGray !important;
+}
+
+.itc-u-border-moon-dust-gray {
+  border-color: $color-moonDustGray !important;
+}
+
+.itc-u-border-ever-true-blue {
+  border-color: $color-everTrueBlue !important;
+}
+
+.itc-u-border-slayter-sky-blue {
+  border-color: $color-slayterSkyBlue !important;
+}
+
+.itc-u-border-amelia-sky-blue {
+  border-color: $color-ameliaSkyBlue !important;
+}
+
+.itc-u-border-land-grant-green {
+  border-color: $color-landGrantGreen !important;
+}
+
+.itc-u-border-ross-ade-green {
+  border-color: $color-rossAdeGreen !important;
+}
+
+.itc-u-border-celery-bog-green {
+  border-color: $color-celeryBogGreen !important;
+}
+
+.itc-u-border-spring-fest-green {
+  border-color: $color-springFestGreen !important;
+}
+
+.itc-u-border-oaken-bucket-brown {
+  border-color: $color-oakenBucketBrown !important;
+}
+
+.itc-u-border-bell-tower-brick {
+  border-color: $color-bellTowerBrick !important;
+}
+
+.itc-u-border-mackey-orange {
+  border-color: $color-mackeyOrange !important;
+}
+
+.itc-u-border-yellow-walk {
+  border-color: $color-yellowWalk !important;
+}
+
+.itc-u-border-fountain-run-teal {
+  border-color: $color-fountainRunTeal !important;
+}
+
+.itc-u-border-pappys-purple {
+  border-color: $color-pappysPurple !important;
+}
+
+.itc-u-border-gray-90 {
+  border-color: $color-gray90 !important;
+}
+
+.itc-u-border-gray-70 {
+  border-color: $color-gray70 !important;
+}
+
+.itc-u-border-gray-40 {
+  border-color: $color-gray40 !important;
+}
+
+.itc-u-border-gray-15 {
+  border-color: $color-gray15 !important;
+}

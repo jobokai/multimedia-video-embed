@@ -1,0 +1,33 @@
+// =============================================================================
+// Master stylesheet
+// Import 3rd-party and custom styles
+// Include license comments for all 3rd-party styles
+// =============================================================================
+
+// =====================================
+// 3rd-party styles
+// TODO: Add license comments for all 3rd-party styles
+// =====================================
+
+@import "~react-big-calendar/lib/css/react-big-calendar.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// =====================================
+// Custom styles
+// =====================================
+
+/// Utility styles
+@import "./colors";
+
+.stl-video__container {
+  display: flex; 
+  flex-flow: row wrap;
+}
+
+// Component styles
+@import "./calendar";
+@import './videos';
+@import './tags';
+@import './searchfield';
+@import './forms';
+
